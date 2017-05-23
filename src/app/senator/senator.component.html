@@ -1,0 +1,12 @@
+<h1 class="underscore">This is your senator</h1>
+<h4>{{bernie | json}}</h4>
+<h5>Bernie's Office is: {{bernieOffice}}</h5>
+
+<p *ngIf="showTypingHobby">Typing new hobby...</p>
+<p *ngIf="!showTypingHobby">&nbsp;</p>
+
+<app-senator-hobbies [hobbies]="bernie.hobbies"
+                     (newHobbyTyped)="newHobbyTypedHandler($event)"
+                     (newHobbyAdded)="newHobbyAddedHandler($event)">
+
+</app-senator-hobbies>

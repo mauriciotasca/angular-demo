@@ -1,0 +1,15 @@
+<h4>Bernie' Hobbies</h4>
+<ul>
+  <li *ngFor="let hobbie of hobbies">
+    {{hobbie}}
+  </li>
+</ul>
+
+<form #hobbyForm="ngForm">
+  <input name="hobby"
+         type="text"
+         [(ngModel)]="newHobbie"
+         (ngModelChange)="emitNewHobbyTyped($event)">
+
+  <button (click)="emitNewHobbyAdded($event)">Add hobby</button>
+</form>

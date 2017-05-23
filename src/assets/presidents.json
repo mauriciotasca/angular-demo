@@ -1,0 +1,24 @@
+{
+  "presidents": [
+    {
+      "name": "George Washington",
+      "age": 57,
+      "hobbies": []
+    },
+    {
+      "name": "Thomas Jefferson",
+      "age": 58,
+      "hobbies": []
+    },
+    {
+      "name": "Theodore Roosevelt",
+      "age": 61,
+      "hobbies": []
+    },
+    {
+      "name": "John F. Kennedy",
+      "age": 44,
+      "hobbies": []
+    }
+  ]
+}
