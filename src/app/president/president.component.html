@@ -1,55 +1,70 @@
-<div class="border color">
-  <p>President Component</p>
+<div class="card">
+  <div class="card-body">
 
-  <button (click)="shouldBeBlue = true;shouldBeRed=false;">BLUE</button>
-  <button (click)="shouldBeRed = true;shouldBeBlue=false">RED</button>
+    <!--<button (click)="shouldBeBlue = true;shouldBeRed=false;">BLUE</button>-->
+    <!--<button (click)="shouldBeRed = true;shouldBeBlue=false">RED</button>-->
 
-  <h1 [ngClass]="{'red-color':shouldBeRed,'blue-color': shouldBeBlue}">These are the presidents</h1>
-  <h1 [class.blue-color]="shouldBeBlue" [class.red-color]="shouldBeRed">These are the presidents</h1>
-  <h4>{{presidents | json}}</h4>
-  <hr>
+    <!--<h4 [ngClass]="{'red-color':shouldBeRed,'blue-color': shouldBeBlue}">These are the presidents</h4>-->
+    <!--<h4 [class.blue-color]="shouldBeBlue" [class.red-color]="shouldBeRed">These are the presidents</h4>-->
 
-  <ul>
-    <li *ngFor="let pres of presidents">
-      {{pres.name}} <br>
-      {{pres.age}} <br>
-      {{pres.hobbies.join(',')}}
-    </li>
-  </ul>
+    <div class="columns">
+      <div class="column col-gapless">
+        <h4>Json representation of the <code>presidents</code> array</h4>
+      </div>
+      <div class="column text-right col-gapless">
+        <div class="card-title h5">President Component</div>
+        <div class="card-subtitle text-gray">app-president</div>
+      </div>
+    </div>
 
-  <h1 class="underscore">This is your president:</h1>
+    <pre class="code">
+          <code>  {{presidents | json}}</code>
+        </pre>
 
-  <button (click)="updatePresident('Abraham Lincoln',30, ['Animals', 'Athletics', 'Music'])">Update president</button>
+    <hr>
 
-  <ul>
-    <li [innerHTML]="(president.name || 'No name found') | makeBold "></li>
-    <!--<li>{{(president.name || 'No name found') | makeBold }}</li>-->
+    <ul>
+      <li *ngFor="let pres of presidents">
+        {{pres.name}} <br>
+        {{pres.age}} <br>
+        {{pres.hobbies.join(',')}}
+      </li>
+    </ul>
 
-    <li>{{president.age || 'No age found'}}</li>
+    <h1 class="underscore">This is your president:</h1>
 
-    <li *ngIf="president.hobbies.length >0">
-      <span>Hobbies:<br></span>
-      <ul>
-        <li *ngFor="let banana of president.hobbies">
-          {{banana}}
-        </li>
-      </ul>
-    </li>
+    <button (click)="updatePresident('Abraham Lincoln',30, ['Animals', 'Athletics', 'Music'])">Update president</button>
 
-    <li *ngIf="president.hobbies.length == 0">
-      <span>No Hobbies Found</span>
-    </li>
-  </ul>
+    <ul>
+      <li [innerHTML]="(president.name || 'No name found') | makeBold "></li>
+      <!--<li>{{(president.name || 'No name found') | makeBold }}</li>-->
 
-  <h3>What's my age again?</h3>
-  <h4><span *ngIf="president.age > 0">You are</span> {{president.age | i18nPlural: agePluralMapping}}</h4>
+      <li>{{president.age || 'No age found'}}</li>
 
-  <hr>
+      <li *ngIf="president.hobbies.length >0">
+        <span>Hobbies:<br></span>
+        <ul>
+          <li *ngFor="let banana of president.hobbies">
+            {{banana}}
+          </li>
+        </ul>
+      </li>
+
+      <li *ngIf="president.hobbies.length == 0">
+        <span>No Hobbies Found</span>
+      </li>
+    </ul>
+
+    <h3>What's my age again?</h3>
+    <h4><span *ngIf="president.age > 0">You are</span> {{president.age | i18nPlural: agePluralMapping}}</h4>
+
+    <hr>
 
 
-  <h1>Two-way data binding</h1>
-  <input placeholder="type something..." type="text" [(ngModel)]="name">
-  <h5>Name: {{name}}</h5>
+    <h1>Two-way data binding</h1>
+    <input placeholder="type something..." type="text" [(ngModel)]="name">
+    <h5>Name: {{name}}</h5>
+  </div>
 </div>
 
 

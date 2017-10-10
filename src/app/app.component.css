@@ -1,3 +1,7 @@
 .color{
   border-color:blue;
 }
+
+.bg-root {
+  background: rgba(3, 169, 244, 0.12);
+}
