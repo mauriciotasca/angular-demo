@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component, OnInit, ViewEncapsulation} from "@angular/core";
 import {PoliticianComponent} from "../politician/politician.component";
 import Senator from "./senator.model";
 
@@ -19,8 +19,8 @@ export class SenatorComponent extends PoliticianComponent implements OnInit {
     this.showTypingHobby = false;
   }
 
-  newHobbyAddedHandler(newHobby) {
-    this.bernie.hobbies.push(newHobby);
+  newHobbyAddedHandler() {
+    console.log('hobby added');
   }
 
   triggerSetTimeout() {
@@ -40,7 +40,7 @@ export class SenatorComponent extends PoliticianComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.bernie = new Senator('Bernie Sanders', 75, ['Athletics', 'Basketball', 'Music']);
+    this.bernie = new Senator('Democratic','Bernie Sanders', 75, ['Athletics', 'Basketball', 'Music']);
     this.bernieOffice = super.getOffice(this.bernie);
   }
 

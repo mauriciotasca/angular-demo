@@ -28,7 +28,6 @@ export class PoliticianComponent implements OnInit {
 
   protected getOffice(politician: Politician): string {
     return politician ? this.offices[politician.name] : '';
-
   }
 
   private createOffices(): void {

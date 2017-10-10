@@ -1,54 +1,56 @@
-<button (click)="shouldBeBlue = true;shouldBeRed=false;">BLUE</button>
-<button (click)="shouldBeRed = true;shouldBeBlue=false">RED</button>
+<div class="border color">
+  <p>President Component</p>
 
-<h1 [ngClass]="{'red-color':shouldBeRed,'blue-color': shouldBeBlue}">These are the presidents</h1>
-<h1 [class.blue-color]="shouldBeBlue" [class.red-color]="shouldBeRed">These are the presidents</h1>
-<h4>{{presidents | json}}</h4>
-<hr>
+  <button (click)="shouldBeBlue = true;shouldBeRed=false;">BLUE</button>
+  <button (click)="shouldBeRed = true;shouldBeBlue=false">RED</button>
 
-<h1 class="underscore">This is your president:</h1>
+  <h1 [ngClass]="{'red-color':shouldBeRed,'blue-color': shouldBeBlue}">These are the presidents</h1>
+  <h1 [class.blue-color]="shouldBeBlue" [class.red-color]="shouldBeRed">These are the presidents</h1>
+  <h4>{{presidents | json}}</h4>
+  <hr>
 
-<button (click)="updatePresident('Abraham Lincoln',1, ['Animals', 'Athletics', 'Music'])">Update president</button>
+  <ul>
+    <li *ngFor="let pres of presidents">
+      {{pres.name}} <br>
+      {{pres.age}} <br>
+      {{pres.hobbies.join(',')}}
+    </li>
+  </ul>
 
-<ul>
-  <li [innerHTML]="(president.name || 'No name found') | makeBold ">
+  <h1 class="underscore">This is your president:</h1>
 
-  </li>
+  <button (click)="updatePresident('Abraham Lincoln',30, ['Animals', 'Athletics', 'Music'])">Update president</button>
 
-  <li>{{(president.name || 'No name found') | makeBold }}</li>
-  <li>{{president.age || 'No age found'}}</li>
+  <ul>
+    <li [innerHTML]="(president.name || 'No name found') | makeBold "></li>
+    <!--<li>{{(president.name || 'No name found') | makeBold }}</li>-->
 
-  <li *ngIf="president.hobbies.length >0">
-    <span>Hobbies:<br></span>
-    <ul>
-      <li *ngFor="let banana of president.hobbies">
-        {{banana}}
-      </li>
-    </ul>
-  </li>
+    <li>{{president.age || 'No age found'}}</li>
 
-  <li *ngIf="president.hobbies.length == 0">
-    <span>No Hobbies Found</span>
-  </li>
-</ul>
+    <li *ngIf="president.hobbies.length >0">
+      <span>Hobbies:<br></span>
+      <ul>
+        <li *ngFor="let banana of president.hobbies">
+          {{banana}}
+        </li>
+      </ul>
+    </li>
 
-<h3>What's my age again?</h3>
-<h4><span *ngIf="president.age > 0">You are</span> {{president.age | i18nPlural: agePluralMapping}}</h4>
+    <li *ngIf="president.hobbies.length == 0">
+      <span>No Hobbies Found</span>
+    </li>
+  </ul>
 
-<hr>
+  <h3>What's my age again?</h3>
+  <h4><span *ngIf="president.age > 0">You are</span> {{president.age | i18nPlural: agePluralMapping}}</h4>
 
-
-
-
-
-
-
-
-
-
+  <hr>
 
 
-<h1>Two-way data binding</h1>
-<input placeholder="type something..." type="text" [(ngModel)]="name">
-<h5>Name: {{name}}</h5>
+  <h1>Two-way data binding</h1>
+  <input placeholder="type something..." type="text" [(ngModel)]="name">
+  <h5>Name: {{name}}</h5>
+</div>
+
+
 

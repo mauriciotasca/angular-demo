@@ -1,9 +1,15 @@
-.underscore{
+.underscore {
   text-decoration: underline;
 }
-.blue-color{
-  color:blue;
+
+.blue-color {
+  color: blue;
 }
-.red-color{
-  color:red;
+
+.red-color {
+  color: red;
+}
+
+.color {
+  border-color: #4caf50;
 }

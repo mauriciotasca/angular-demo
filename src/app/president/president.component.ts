@@ -15,13 +15,16 @@ export class PresidentComponent implements OnInit {
   shouldBeBlue = true;
   private shouldBeRed = true;
 
-  niceClass = {'red-color': this.shouldBeRed,
-    'blue-color': this.shouldBeBlue};
   private agePluralMapping: {[k: string]: string} = {'=0': 'No age found.', '=1': 'one year old', 'other': `# years old`};
 
   constructor(private presidentService: PresidentService) {
     this.presidents = new Array<President>();
     this.president = new President();
+  }
+
+  changeEventOnNgModel(evt){
+    console.log(evt);
+    console.log(evt);
   }
 
   updatePresident(name: string, age: number, hobbies: Array<string>) {

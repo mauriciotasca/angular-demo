@@ -3,7 +3,7 @@
     {
       "name": "George Washington",
       "age": 57,
-      "hobbies": []
+      "hobbies": ["Swimming", "Singing"]
     },
     {
       "name": "Thomas Jefferson",

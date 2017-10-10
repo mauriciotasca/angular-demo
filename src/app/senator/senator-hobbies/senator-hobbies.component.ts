@@ -17,8 +17,10 @@ export class SenatorHobbiesComponent implements OnInit {
   constructor() {}
 
   emitNewHobbyAdded(): void{
-    this.newHobbyAdded.emit(this.newHobbie);
+    this.hobbies.push(this.newHobbie);
     this.newHobbie = '';
+
+    this.newHobbyAdded.emit();
   }
 
   emitNewHobbyTyped() :void{

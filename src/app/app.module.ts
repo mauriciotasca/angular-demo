@@ -9,8 +9,6 @@ import { SenatorComponent } from './senator/senator.component';
 import { PoliticianComponent } from './politician/politician.component';
 import { SenatorHobbiesComponent } from './senator/senator-hobbies/senator-hobbies.component';
 import { MakeBoldPipe } from './make-bold.pipe';
-import { SampleComponent } from './sample/sample.component';
-import { TalkComponent } from './talk/talk.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +18,6 @@ import { TalkComponent } from './talk/talk.component';
     PoliticianComponent,
     SenatorHobbiesComponent,
     MakeBoldPipe,
-    SampleComponent,
-    TalkComponent
   ],
   imports: [
     BrowserModule,

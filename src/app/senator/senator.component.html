@@ -1,12 +1,23 @@
-<h1 class="underscore">This is your senator</h1>
-<h4>{{bernie | json}}</h4>
-<h5>Bernie's Office is: {{bernieOffice}}</h5>
+<div class="border color">
+  <p>Senator Component</p>
 
-<p *ngIf="showTypingHobby">Typing new hobby...</p>
-<p *ngIf="!showTypingHobby">&nbsp;</p>
+  <h1 class="underscore">This is your senator</h1>
+  <h4>{{bernie | json}}</h4>
+  <h5>Bernie's Office is: {{bernieOffice}}</h5>
 
-<app-senator-hobbies [hobbies]="bernie.hobbies"
-                     (newHobbyTyped)="newHobbyTypedHandler($event)"
-                     (newHobbyAdded)="newHobbyAddedHandler($event)">
+  <p *ngIf="showTypingHobby">Typing new hobby...</p>
+  <p *ngIf="!showTypingHobby">No action detected</p>
 
-</app-senator-hobbies>
+  <app-senator-hobbies [hobbies]="bernie.hobbies"
+                       (newHobbyTyped)="newHobbyTypedHandler($event)"
+                       (newHobbyAdded)="newHobbyAddedHandler($event)">
+
+  </app-senator-hobbies>
+
+  <h5>Party</h5>
+  <p>{{bernie.party}}</p>
+
+</div>
+
+
+
